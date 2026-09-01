@@ -78,10 +78,12 @@ svg { stroke-width: 1.8; }
   color: white;
   font-size: 0.875rem;
   font-weight: 650;
+  opacity: 0;
+  pointer-events: none;
   transform: translateY(-160%);
-  transition: transform 140ms ease-out;
+  transition: transform 140ms ease-out, opacity 120ms ease-out;
 }
-.skip-link:focus { transform: translateY(0); }
+.skip-link:focus-visible { opacity: 1; pointer-events: auto; transform: translateY(0); }
 
 .campaign-shell { min-height: 100vh; }
 .topbar {
