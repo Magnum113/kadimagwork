@@ -21,7 +21,7 @@ import { DesktopCampaignNavigation, MobileCampaignNavigation } from '@/component
 const kpis = [
   { label: 'Предзаказы', value: '40', detail: 'цель первой фазы', icon: Goal, tone: 'blue' },
   { label: 'Продажи компании', value: '+16,6%', detail: 'к запуску iPhone 17', icon: Target, tone: 'violet' },
-  { label: 'Интернет-магазин', value: '344', detail: 'устройства · сайт + приложение', icon: CircleDollarSign, tone: 'green' },
+  { label: 'Интернет-магазин', value: '344', detail: 'проданных iPhone 18', icon: CircleDollarSign, tone: 'green' },
   { label: 'Бюджет РСЯ', value: '900 000 ₽', detail: 'на две фазы', icon: CircleDollarSign, tone: 'green' },
 ];
 

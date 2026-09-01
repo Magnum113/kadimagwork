@@ -26,7 +26,7 @@ const companyHistory = [
 ];
 
 const onlineStoreMetrics = [
-  ['Продажи', '344', 'устройства'],
+  ['Продано iPhone 18', '344', 'устройства'],
   ['Выручка', '≈ 44,9', 'млн ₽'],
   ['Прибыль', '≈ 839', 'тыс. ₽'],
 ];
@@ -68,7 +68,7 @@ const campaignMetrics = [
   ['Компания · рост продаж', '+16,6%', 'Superset'],
   ['Компания · рост выручки', '+16,6% ориентир', 'Superset'],
   ['Компания · рост прибыли', '+16,6% ориентир', 'Superset'],
-  ['Интернет-магазин · продажи', '344', 'Superset'],
+  ['Интернет-магазин · продажи iPhone 18', '344', 'Superset'],
   ['Интернет-магазин · выручка', '≈ 44,9 млн ₽', 'Superset'],
   ['Интернет-магазин · прибыль', '≈ 839 тыс. ₽', 'Superset'],
   ['Расход РСЯ', '900 000 ₽', 'Яндекс Директ'],
@@ -122,7 +122,7 @@ export function CampaignDashboard() {
           </Card>
 
           <div className="objective-stack">
-            <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Рост продаж компании на 16,6%; интернет-магазин — 344 устройства.</p></div></div>
+            <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Рост продаж компании на 16,6%; интернет-магазин — продать 344 iPhone 18.</p></div></div>
             <div className="objective-row"><span className="objective-icon"><Goal /></span><div><strong>Маркетинг</strong><p>40 заявок на предзаказ.</p></div></div>
             <div className="objective-row"><span className="objective-icon"><MessageCircle /></span><div><strong>Коммуникация</strong><p>Поддержать выбор 05.ru на всём пути к покупке.</p></div></div>
           </div>
@@ -137,7 +137,7 @@ export function CampaignDashboard() {
       <section id="history" aria-labelledby="history-title">
         <div className="section-heading">
           <div><p className="section-kicker">Бизнес-метрики</p><h2 id="history-title">План основной фазы</h2></div>
-          <p className="section-summary">Компания показана относительно запуска iPhone 17. Абсолютные цели приведены только для сайта и приложения.</p>
+          <p className="section-summary">Компания показана относительно запуска iPhone 17. Для интернет-магазина указан план в штуках и деньгах.</p>
         </div>
         <Card className="chart-card">
           <CardHeader><CardTitle>Динамика продаж компании</CardTitle><CardDescription>Индекс: запуск iPhone 17 = 100 · период 20 сентября — 1 ноября</CardDescription></CardHeader>
@@ -158,7 +158,7 @@ export function CampaignDashboard() {
           </CardContent>
         </Card>
         <div className="online-metrics-heading">
-          <div><p className="section-kicker">Абсолютные цели</p><h3>Интернет-магазин: сайт и приложение</h3></div>
+          <div><p className="section-kicker">Абсолютные цели</p><h3>Интернет-магазин</h3></div>
           <p>Расчёт по CAGR запусков 2022–2025 и экономике одного устройства iPhone 17.</p>
         </div>
         <div className="online-metrics-grid">
