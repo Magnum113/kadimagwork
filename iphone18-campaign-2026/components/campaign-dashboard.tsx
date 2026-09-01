@@ -26,9 +26,9 @@ const companyHistory = [
 ];
 
 const onlineStoreMetrics = [
-  ['Продажи net', '344', 'устройства'],
-  ['Net-выручка', '≈ 44,9', 'млн ₽'],
-  ['Net-прибыль', '≈ 839', 'тыс. ₽'],
+  ['Продажи', '344', 'устройства'],
+  ['Выручка', '≈ 44,9', 'млн ₽'],
+  ['Прибыль', '≈ 839', 'тыс. ₽'],
 ];
 
 const crmEvents = [
@@ -65,12 +65,12 @@ const launchFormats = [
 
 const campaignMetrics = [
   ['Заявки на предзаказ', '40', 'Superset'],
-  ['Компания · рост net-продаж', '+16,6%', 'Superset'],
-  ['Компания · рост net-выручки', '+16,6% ориентир', 'Superset'],
-  ['Компания · рост net-прибыли', '+16,6% ориентир', 'Superset'],
-  ['Интернет-магазин · продажи net', '344', 'Superset'],
-  ['Интернет-магазин · net-выручка', '≈ 44,9 млн ₽', 'Superset'],
-  ['Интернет-магазин · net-прибыль', '≈ 839 тыс. ₽', 'Superset'],
+  ['Компания · рост продаж', '+16,6%', 'Superset'],
+  ['Компания · рост выручки', '+16,6% ориентир', 'Superset'],
+  ['Компания · рост прибыли', '+16,6% ориентир', 'Superset'],
+  ['Интернет-магазин · продажи', '344', 'Superset'],
+  ['Интернет-магазин · выручка', '≈ 44,9 млн ₽', 'Superset'],
+  ['Интернет-магазин · прибыль', '≈ 839 тыс. ₽', 'Superset'],
   ['Расход РСЯ', '900 000 ₽', 'Яндекс Директ'],
   ['Трафик и конверсия промостраницы', 'Диагностика', 'Яндекс Метрика'],
   ['Отклики на CRM-коммуникации', 'Диагностика', 'CRM-отчёты'],
@@ -122,7 +122,7 @@ export function CampaignDashboard() {
           </Card>
 
           <div className="objective-stack">
-            <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Рост net-продаж компании на 16,6%; интернет-магазин — 344 устройства net.</p></div></div>
+            <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Рост продаж компании на 16,6%; интернет-магазин — 344 устройства.</p></div></div>
             <div className="objective-row"><span className="objective-icon"><Goal /></span><div><strong>Маркетинг</strong><p>40 заявок на предзаказ.</p></div></div>
             <div className="objective-row"><span className="objective-icon"><MessageCircle /></span><div><strong>Коммуникация</strong><p>Поддержать выбор 05.ru на всём пути к покупке.</p></div></div>
           </div>
@@ -140,9 +140,9 @@ export function CampaignDashboard() {
           <p className="section-summary">Компания показана относительно запуска iPhone 17. Абсолютные цели приведены только для сайта и приложения.</p>
         </div>
         <Card className="chart-card">
-          <CardHeader><CardTitle>Динамика net-продаж компании</CardTitle><CardDescription>Индекс: запуск iPhone 17 = 100 · период 20 сентября — 1 ноября</CardDescription></CardHeader>
+          <CardHeader><CardTitle>Динамика продаж компании</CardTitle><CardDescription>Индекс: запуск iPhone 17 = 100 · период 20 сентября — 1 ноября</CardDescription></CardHeader>
           <CardContent>
-            <figure className="history-chart" aria-label="Индекс net-продаж компании для запусков iPhone 14 — iPhone 17 и цель iPhone 18, где запуск iPhone 17 равен 100">
+            <figure className="history-chart" aria-label="Индекс продаж компании для запусков iPhone 14 — iPhone 17 и цель iPhone 18, где запуск iPhone 17 равен 100">
               <div className="target-line"><span>цель 116,6</span></div>
               <div className="history-bars">
                 {companyHistory.map((item) => (
