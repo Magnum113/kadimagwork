@@ -81,9 +81,7 @@ export default function Home() {
                 <span><CheckCircle2 /> Владелец: Магомед Кадимагомедов</span>
               </div>
             </div>
-            <div className="hero-signal" aria-hidden="true">
-              <span className="signal-orbit orbit-one" /><span className="signal-orbit orbit-two" /><span className="signal-core">18</span>
-            </div>
+            <div className="hero-visual" aria-hidden="true" />
           </section>
 
           <section aria-labelledby="kpi-title" id="kpi">
