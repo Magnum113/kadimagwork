@@ -108,3 +108,23 @@ passed
 ### Final result
 
 passed
+
+## Header material fix — 01.09.2026
+
+### Исправлено
+
+- Нестабильная полупрозрачная заливка через `color-mix()` заменена на явный RGB-цвет с alpha: фон больше не отбрасывается браузером.
+- Удалён ручной `-webkit-backdrop-filter`: production-компилятор снова формирует и стандартное, и Safari-свойство, поэтому Chromium больше не получает `backdrop-filter: none`.
+- Для desktop topbar восстановлен frosted-material эффект: полупрозрачный слой, `24px` blur, насыщение и мягкая scroll-edge тень.
+- Для mobile-nav применён тот же материал с чуть более плотной заливкой, чтобы пункты разделов сохраняли контраст поверх контента.
+- Fallback для браузеров без `backdrop-filter` и сплошной фон для `prefers-reduced-transparency` сохранены.
+
+### Проверка
+
+- Desktop: шапка поверх hero — passed.
+- Mobile: topbar и панель разделов поверх hero — passed.
+- Browser console errors / warnings: не найдены.
+
+### Final result
+
+passed
