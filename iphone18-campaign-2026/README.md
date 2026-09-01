@@ -47,8 +47,8 @@ PASSWORD=ваш_пароль
 
 ## Технологии
 
-- Vinext / React 19;
+- Next.js 16 / React 19;
 - Tailwind CSS 4;
 - shadcn UI;
 - Lucide Icons;
-- Cloudflare Worker-compatible build.
+- Vercel Functions и стандартный Next.js build.

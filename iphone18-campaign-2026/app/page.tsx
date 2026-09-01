@@ -11,6 +11,7 @@ import {
   Target,
   Users,
 } from 'lucide-react';
+import Image from 'next/image';
 
 import { Badge } from '@/components/ui/badge';
 import {
@@ -44,8 +45,7 @@ export default function Home() {
     <div className="campaign-shell">
       <header className="topbar">
         <a className="brand" href="#overview" aria-label="05.ru — начало страницы">
-          <span className="brand-mark">05</span>
-          <span><strong>05.ru</strong><small>Рекламные кампании</small></span>
+          <Image className="brand-logo" src="/logo-05ru.svg" alt="05.ru" width={108} height={36} priority />
         </a>
         <div className="topbar-meta">
           <span className="campaign-period">2 сентября — 1 ноября 2026</span>

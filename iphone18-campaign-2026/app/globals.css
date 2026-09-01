@@ -75,22 +75,8 @@ svg { stroke-width: 1.8; }
   background: color-mix(in oklch, var(--background), white 52% / 92%);
   backdrop-filter: blur(18px);
 }
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand-mark {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 11px;
-  background: var(--foreground);
-  color: white;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: -0.04em;
-}
-.brand strong, .brand small { display: block; }
-.brand strong { font-size: 14px; line-height: 1.2; }
-.brand small { margin-top: 2px; color: var(--muted-foreground); font-size: 12px; }
+.brand { display: flex; align-items: center; }
+.brand-logo { display: block; width: 108px; height: 36px; }
 .topbar-meta { display: flex; align-items: center; gap: 18px; }
 .campaign-period { color: var(--muted-foreground); font-size: 13px; }
 .status-badge { height: 30px; padding-inline: 12px; background: var(--secondary); color: var(--secondary-foreground); }
