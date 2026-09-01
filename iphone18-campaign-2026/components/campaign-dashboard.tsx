@@ -10,6 +10,7 @@ import {
   ShoppingBag,
   Users,
 } from 'lucide-react';
+import Image from 'next/image';
 
 import { Badge } from '@/components/ui/badge';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -262,8 +263,8 @@ export function CampaignDashboard() {
       </section>
 
       <footer className="site-footer">
-        <div className="footer-brand"><span>05</span><strong>Рекламная кампания iPhone 18</strong></div>
-        <a href="https://05.ru/promo/iphone18/" target="_blank" rel="noreferrer"><MonitorSmartphone /> Промостраница</a>
+        <div className="footer-brand"><Image className="footer-logo" src="/logo-05ru.svg" alt="05.ru" width={72} height={24} /><strong>Рекламная кампания iPhone 18</strong></div>
+        <a aria-label="Открыть промостраницу 05.ru в новой вкладке" href="https://05.ru/promo/iphone18/" target="_blank" rel="noreferrer"><MonitorSmartphone /> Открыть промостраницу</a>
         <p>Данные на 01.09.2026</p>
       </footer>
     </>

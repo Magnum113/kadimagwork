@@ -37,3 +37,37 @@
 ## Final result
 
 passed
+
+## Apple Design audit — 01.09.2026
+
+### Исправлено
+
+- Purpose / simplicity: удалено повторяющееся пояснение из боковой навигации; производственные задачи не добавляются на презентационную страницу.
+- Familiarity / wayfinding: активный пункт desktop- и mobile-навигации синхронизируется с фактически видимым разделом и получает `aria-current="location"`.
+- Response: ссылки, вкладки и кнопка входа дают мгновенный press-feedback; действие не задерживается анимацией.
+- Typography: Inter удалён; используется системный стек платформы с отдельной display-ролью, оптической настройкой и tabular nums.
+- Materials: sticky topbar и mobile-nav используют translucent material со scroll-edge тенью вместо жёсткого разделителя.
+- Accessibility: добавлены skip-link, заметный общий focus, `prefers-reduced-transparency`, `prefers-contrast: more` и более мягкий `prefers-reduced-motion` без потери цветовой обратной связи.
+- Spatial consistency: мобильная навигация удерживает активный пункт в видимой области, якоря учитывают sticky chrome.
+- Brand consistency: в footer используется тот же логотип 05.ru, что в header и login.
+
+### Осознанно не добавлено
+
+- Пружинные и momentum-анимации: на странице нет drag/swipe/sheet-взаимодействий, поэтому они не решают пользовательскую задачу.
+- Параллакс и анимация hero: постоянное движение отвлекало бы от целей и KPI кампании.
+- Звуки и haptics: у информационной страницы нет значимого действия, которое оправдывает multimodal feedback.
+
+### Проверка
+
+- Desktop `1440 × 900`: passed.
+- Mobile `390 × 844`: passed, горизонтального overflow нет.
+- Scroll-spy desktop / mobile: passed.
+- Tabs: passed, выбранная панель и `aria-selected` синхронизированы.
+- Интерактивные зоны меньше `24 × 24px`: не найдены.
+- Последовательность заголовков `h1–h3`: passed.
+- Browser console errors / warnings: не найдены.
+- Lint, TypeScript, production build: passed.
+
+### Final result
+
+passed

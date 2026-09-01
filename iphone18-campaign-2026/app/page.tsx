@@ -3,13 +3,7 @@ import {
   CheckCircle2,
   CircleDollarSign,
   Goal,
-  LayoutDashboard,
-  Map,
-  Megaphone,
-  MessageSquareText,
-  Radio,
   Target,
-  Users,
 } from 'lucide-react';
 import Image from 'next/image';
 
@@ -22,16 +16,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { CampaignDashboard } from '@/components/campaign-dashboard';
-
-const navItems = [
-  { label: 'Обзор', href: '#overview', icon: LayoutDashboard },
-  { label: 'Цели', href: '#kpi', icon: Target },
-  { label: 'Этапы', href: '#roadmap', icon: Map },
-  { label: 'Стратегия', href: '#strategy', icon: Users },
-  { label: 'CRM-план', href: '#crm', icon: MessageSquareText },
-  { label: 'Форматы', href: '#formats', icon: Megaphone },
-  { label: 'Метрики', href: '#tracking', icon: Radio },
-];
+import { DesktopCampaignNavigation, MobileCampaignNavigation } from '@/components/campaign-navigation';
 
 const kpis = [
   { label: 'Предзаказы', value: '40', detail: 'цель первой фазы', icon: Goal, tone: 'blue' },
@@ -43,6 +28,7 @@ const kpis = [
 export default function Home() {
   return (
     <div className="campaign-shell">
+      <a className="skip-link" href="#campaign-content">К содержанию кампании</a>
       <header className="topbar">
         <a className="brand" href="#overview" aria-label="05.ru — начало страницы">
           <Image className="brand-logo" src="/logo-05ru.svg" alt="05.ru" width={108} height={36} priority />
@@ -53,24 +39,12 @@ export default function Home() {
         </div>
       </header>
 
-      <nav className="mobile-nav" aria-label="Быстрая навигация">
-        {navItems.map(({ label, href }) => <a href={href} key={href}>{label}</a>)}
-      </nav>
+      <MobileCampaignNavigation />
 
       <div className="page-grid">
-        <aside className="sidebar" aria-label="Навигация по кампании">
-          <p className="nav-kicker">Разделы</p>
-          <nav>
-            {navItems.map(({ label, href, icon: Icon }, index) => (
-              <a className={index === 0 ? 'nav-link active' : 'nav-link'} href={href} key={href}>
-                <Icon /><span>{label}</span>
-              </a>
-            ))}
-          </nav>
-          <div className="sidebar-note"><p>Краткий план рекламной кампании для команды 05.ru.</p></div>
-        </aside>
+        <DesktopCampaignNavigation />
 
-        <main className="content">
+        <main className="content" id="campaign-content" tabIndex={-1}>
           <section className="campaign-hero" id="overview">
             <div className="hero-copy">
               <div className="eyebrow"><span>iPhone 18</span><span>2026</span></div>
