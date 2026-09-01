@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'iPhone 18 — рекламная кампания 05.ru',
   description: 'Цели, этапы, аудитория, каналы и метрики рекламной кампании iPhone 18 в 05.ru.',
   keywords: ['05.ru', 'iPhone 18', 'рекламная кампания', 'CRM', 'РСЯ'],
+  robots: { index: false, follow: false },
   openGraph: {
     title: 'iPhone 18 — рекламная кампания 05.ru',
     description: 'План кампании: цели, этапы, CRM, форматы и метрики на период 02.09–01.11.2026.',
