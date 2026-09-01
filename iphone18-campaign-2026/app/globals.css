@@ -198,13 +198,13 @@ svg { stroke-width: 1.8; }
   inset: 0;
   z-index: 0;
   overflow: hidden;
-  background: #779ac3;
+  background: #5d7faa;
 }
 .hero-visual::before {
   content: '';
   position: absolute;
-  inset: 0 0 0 28%;
-  background: url('/apple-event-september-2026.jpg') center / cover no-repeat;
+  inset: 0;
+  background: url('/apple-event-september-2026-largetall.jpg') center / cover no-repeat;
 }
 
 section { scroll-margin-top: 100px; }
@@ -367,7 +367,6 @@ section { scroll-margin-top: 100px; }
   .page-grid { grid-template-columns: 180px minmax(0, 1fr); gap: 32px; }
   .campaign-hero { min-height: 480px; }
   .hero-copy { width: min(64%, 650px); }
-  .hero-visual::before { inset: 0 0 0 22%; }
   .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .strategy-layout, .crm-layout, .paid-grid { grid-template-columns: 1fr; }
   .message-wave-grid, .owner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -392,7 +391,7 @@ section { scroll-margin-top: 100px; }
       linear-gradient(90deg, rgb(52 84 124 / 18%), transparent 72%);
   }
   .hero-copy { width: 100%; max-width: 620px; }
-  .hero-visual::before { inset: 0; background-size: auto 74%; background-position: 84% 3%; background-repeat: no-repeat; }
+  .hero-visual::before { background-size: auto 60%; background-position: 53% top; }
   .campaign-hero h1 { font-size: clamp(42px, 13vw, 62px); }
   .hero-meta { display: grid; }
   .section-heading { align-items: start; margin-top: 52px; }
@@ -412,7 +411,7 @@ section { scroll-margin-top: 100px; }
   .brand small { display: none; }
   .status-badge { height: 28px; font-size: 11px; }
   .campaign-hero { min-height: 620px; }
-  .hero-visual::before { background-size: auto 67%; background-position: 76% 2%; }
+  .hero-visual::before { background-position: 53% top; }
   .hero-lead { margin-top: 22px; }
   .kpi-grid { grid-template-columns: 1fr; }
   .kpi-card { min-height: 150px; }
