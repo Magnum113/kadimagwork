@@ -204,7 +204,7 @@ svg { stroke-width: 1.8; }
   content: '';
   position: absolute;
   inset: 0;
-  background: url('/apple-event-september-2026-largetall.jpg') center / cover no-repeat;
+  background: url('/apple-event-september-2026-largetall.jpg') 38% center / cover no-repeat;
 }
 
 section { scroll-margin-top: 100px; }
