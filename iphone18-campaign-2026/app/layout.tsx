@@ -6,19 +6,19 @@ const inter = Inter({ variable: '--font-inter', subsets: ['latin', 'cyrillic'], 
 
 export const metadata: Metadata = {
   title: 'iPhone 18 — рекламная кампания 05.ru',
-  description: 'Стратегия, сроки, KPI, каналы и план-факт рекламной кампании iPhone 18 в 05.ru.',
-  keywords: ['05.ru', 'iPhone 18', 'рекламная кампания', 'CRM', 'РСЯ', 'план-факт'],
+  description: 'Цели, этапы, аудитория, каналы и метрики рекламной кампании iPhone 18 в 05.ru.',
+  keywords: ['05.ru', 'iPhone 18', 'рекламная кампания', 'CRM', 'РСЯ'],
   openGraph: {
     title: 'iPhone 18 — рекламная кампания 05.ru',
-    description: 'Цели, roadmap, CRM-план, форматы и центр метрик кампании 02.09–01.11.2026.',
+    description: 'План кампании: цели, этапы, CRM, форматы и метрики на период 02.09–01.11.2026.',
     type: 'website',
     locale: 'ru_RU',
-    siteName: '05.ru Campaign Control',
+    siteName: '05.ru',
   },
   twitter: {
     card: 'summary',
     title: 'iPhone 18 — рекламная кампания 05.ru',
-    description: 'Цели, roadmap, CRM-план, форматы и план-факт кампании.',
+    description: 'Цели, этапы, CRM-план, форматы и метрики кампании.',
   },
 };
 
