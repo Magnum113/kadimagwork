@@ -248,6 +248,17 @@ section { scroll-margin-top: 100px; }
 .legend-history { background: oklch(0.78 0.035 258); }
 .legend-target { background: var(--primary); }
 
+.online-metrics-heading { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin: 26px 2px 14px; }
+.online-metrics-heading h3 { margin: 0; font-size: clamp(21px, 2.2vw, 28px); letter-spacing: -0.03em; }
+.online-metrics-heading > p { max-width: 460px; margin: 0; color: var(--muted-foreground); font-size: 12px; line-height: 1.55; text-align: right; }
+.online-metrics-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.online-metric-card { min-height: 156px; border: 0; background: linear-gradient(155deg, white, oklch(0.97 0.018 258)); box-shadow: inset 0 0 0 1px var(--border); }
+.online-metric-card [data-slot='card-header'] { padding-bottom: 6px; }
+.online-metric-card [data-slot='card-content'] { margin-top: auto; }
+.online-metric-card p { display: flex; align-items: baseline; gap: 8px; margin: 0; }
+.online-metric-card strong { font-size: clamp(30px, 3vw, 42px); line-height: 1; letter-spacing: -0.05em; }
+.online-metric-card span { color: var(--muted-foreground); font-size: 12px; }
+
 .crm-layout { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(310px, 0.65fr); gap: 18px; align-items: start; }
 .crm-timeline { position: relative; display: grid; gap: 10px; }
 .crm-timeline::before { content: ''; position: absolute; top: 38px; bottom: 38px; left: 42px; width: 1px; background: var(--border); }
@@ -329,6 +340,7 @@ section { scroll-margin-top: 100px; }
   .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .strategy-layout, .crm-layout, .paid-grid { grid-template-columns: 1fr; }
   .message-wave-grid, .owner-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .online-metrics-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 
 @media (max-width: 820px) {
@@ -352,6 +364,9 @@ section { scroll-margin-top: 100px; }
   .audience-panel { grid-template-columns: 1fr; gap: 22px; }
   .message-wave-grid, .owner-grid { grid-template-columns: 1fr; }
   .tracking-rules { grid-template-columns: 1fr; }
+  .online-metrics-heading { display: block; }
+  .online-metrics-heading > p { margin-top: 8px; text-align: left; }
+  .online-metrics-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 560px) {

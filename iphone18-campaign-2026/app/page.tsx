@@ -34,9 +34,9 @@ const navItems = [
 
 const kpis = [
   { label: 'Предзаказы', value: '40', detail: 'цель первой фазы', icon: Goal, tone: 'blue' },
-  { label: 'Продажи iPhone 18 net', value: '3 850', detail: 'цель основной фазы', icon: Target, tone: 'violet' },
+  { label: 'Net-продажи компании', value: '+16,6%', detail: 'к запуску iPhone 17', icon: Target, tone: 'violet' },
+  { label: 'Интернет-магазин', value: '344', detail: 'устройства net · сайт + приложение', icon: CircleDollarSign, tone: 'green' },
   { label: 'Бюджет РСЯ', value: '900 000 ₽', detail: 'на две фазы', icon: CircleDollarSign, tone: 'green' },
-  { label: 'Этапы кампании', value: '2', detail: 'предзаказ и старт продаж', icon: CalendarDays, tone: 'amber' },
 ];
 
 export default function Home() {
@@ -121,7 +121,7 @@ export default function Home() {
                 <CardHeader>
                   <div className="phase-topline"><Badge variant="outline">Фаза 2</Badge><span>20 сентября — 1 ноября</span></div>
                   <CardTitle>Старт продаж</CardTitle>
-                  <CardDescription>Продать 3 850 устройств iPhone 18 net.</CardDescription>
+                  <CardDescription>Увеличить net-продажи компании на 16,6% к запуску iPhone 17.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="phase-budget"><span>Бюджет РСЯ</span><strong>600 000 ₽</strong></div>
