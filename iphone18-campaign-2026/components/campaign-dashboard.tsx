@@ -114,7 +114,7 @@ const campaignMetrics = [
 const planFactSummary = [
   { label: 'Заявки на предзаказ', plan: '40' },
   { label: 'Продажи iPhone 18', plan: '344' },
-  { label: 'Расход РСЯ', plan: '900 000 ₽' },
+  { label: 'Расход РСЯ', plan: '900\u00A0000\u00A0₽' },
 ];
 
 type DailyPerformanceTableProps = {
