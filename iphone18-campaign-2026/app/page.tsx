@@ -20,7 +20,7 @@ import { DesktopCampaignNavigation, MobileCampaignNavigation } from '@/component
 
 const kpis = [
   { label: 'Предзаказы', value: '40', detail: 'цель первой фазы', icon: Goal, tone: 'blue' },
-  { label: 'Продажи компании', value: '+16,6%', detail: 'к запуску iPhone 17', icon: Target, tone: 'violet' },
+  { label: 'Продажи iPhone 18 компании', value: '+16,6%', detail: 'по количеству устройств за 20.09–01.11 к запуску iPhone 17', icon: Target, tone: 'violet' },
   { label: 'Интернет-магазин', value: '344', detail: 'проданных iPhone 18', icon: CircleDollarSign, tone: 'green' },
   { label: 'Бюджет РСЯ', value: '900 000 ₽', detail: 'на две фазы', icon: CircleDollarSign, tone: 'green' },
 ];
@@ -93,7 +93,7 @@ export default function Home() {
                 <CardHeader>
                   <div className="phase-topline"><Badge variant="outline">Фаза 2</Badge><span>20 сентября — 1 ноября</span></div>
                   <CardTitle>Старт продаж</CardTitle>
-                  <CardDescription>Увеличить продажи компании на 16,6% к запуску iPhone 17.</CardDescription>
+                  <CardDescription>Продать на 16,6% больше устройств iPhone 18, чем iPhone 17 за сопоставимый период запуска.</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="phase-budget"><span>Бюджет РСЯ</span><strong>600 000 ₽</strong></div>

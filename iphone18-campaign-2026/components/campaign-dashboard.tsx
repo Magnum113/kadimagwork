@@ -100,7 +100,7 @@ const launchFormats = [
 
 const campaignMetrics = [
   ['Заявки на предзаказ', '40', 'Superset'],
-  ['Компания · рост продаж', '+16,6%', 'Superset'],
+  ['Компания · количество проданных iPhone 18', '+16,6% к запуску iPhone 17', 'Superset'],
   ['Компания · рост выручки', '+16,6% ориентир', 'Superset'],
   ['Компания · рост прибыли', '+16,6% ориентир', 'Superset'],
   ['Интернет-магазин · продажи iPhone 18', '344', 'Superset'],
@@ -111,14 +111,16 @@ const campaignMetrics = [
   ['Отклики на CRM-коммуникации', 'Диагностика', 'CRM-отчёты'],
 ];
 
-const team = [
-  ['МК', 'Магомед Кадимагомедов', 'Кампания и онлайн-продвижение'],
-  ['ЮБ', 'Юлия Бородина', 'CRM-маркетинг'],
-  ['АУ', 'Амина Умарова', 'Тексты'],
-  ['РЛ', 'Регина Лямина', 'Управление проектом'],
-  ['КК', 'Камиль Казимов', 'Креативная стратегия'],
-  ['ОН', 'Омар Нахибашев', 'Арт-дирекшн'],
+const planFactSummary = [
+  { label: 'Заявки на предзаказ', plan: '40' },
+  { label: 'Продажи iPhone 18', plan: '344' },
+  { label: 'Расход РСЯ', plan: '900 000 ₽' },
 ];
+
+type DailyPerformanceTableProps = {
+  metric: string;
+  resultCost: string;
+};
 
 function FormatsTable({ rows }: { rows: string[][] }) {
   return (
@@ -138,6 +140,38 @@ function FormatsTable({ rows }: { rows: string[][] }) {
   );
 }
 
+function DailyPerformanceTable({ metric, resultCost }: DailyPerformanceTableProps) {
+  return (
+    <Card className="table-card plan-fact-table-card">
+      <CardContent>
+        <div className="plan-fact-table-scroll">
+          <Table className="plan-fact-table">
+            <TableHeader>
+              <TableRow>
+                <TableHead>Дата</TableHead>
+                <TableHead>{metric}<small>план / факт</small></TableHead>
+                <TableHead>Расход РСЯ<small>план / факт</small></TableHead>
+                <TableHead>{resultCost}</TableHead>
+                <TableHead>Выполнение плана</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              <TableRow className="plan-fact-empty-row">
+                <TableCell colSpan={5}>
+                  <div className="plan-fact-empty">
+                    <strong>Данные ещё не внесены</strong>
+                    <p>После закрытия каждого отчётного дня здесь появятся плановые и фактические показатели.</p>
+                  </div>
+                </TableCell>
+              </TableRow>
+            </TableBody>
+          </Table>
+        </div>
+      </CardContent>
+    </Card>
+  );
+}
+
 export function CampaignDashboard() {
   return (
     <>
@@ -147,7 +181,7 @@ export function CampaignDashboard() {
         </div>
 
         <div className="objective-stack">
-          <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Рост продаж компании на 16,6%; интернет-магазин — продать 344 iPhone 18.</p></div></div>
+          <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Продать на 16,6% больше устройств iPhone 18, чем iPhone 17 за сопоставимый период запуска; интернет-магазину — продать 344 iPhone 18.</p></div></div>
           <div className="objective-row"><span className="objective-icon"><Goal /></span><div><strong>Маркетинг</strong><p>40 заявок на предзаказ.</p></div></div>
         </div>
 
@@ -160,12 +194,12 @@ export function CampaignDashboard() {
       <section id="history" aria-labelledby="history-title">
         <div className="section-heading">
           <div><p className="section-kicker">Бизнес-метрики</p><h2 id="history-title">План основной фазы</h2></div>
-          <p className="section-summary">Компания показана относительно запуска iPhone 17. Для интернет-магазина указан план в штуках и деньгах.</p>
+          <p className="section-summary">Цель компании — количество проданных устройств iPhone 18 за 20 сентября — 1 ноября относительно сопоставимого запуска iPhone 17. Для интернет-магазина указан план в штуках и деньгах.</p>
         </div>
         <Card className="chart-card">
-          <CardHeader><CardTitle>Динамика продаж компании</CardTitle><CardDescription>Индекс: запуск iPhone 17 = 100 · период 20 сентября — 1 ноября</CardDescription></CardHeader>
+          <CardHeader><CardTitle>Динамика продаж iPhone на старте</CardTitle><CardDescription>Индекс количества проданных устройств: запуск iPhone 17 = 100 · период 20 сентября — 1 ноября</CardDescription></CardHeader>
           <CardContent>
-            <figure className="history-chart" aria-label="Индекс продаж компании для запусков iPhone 14 — iPhone 17 и цель iPhone 18, где запуск iPhone 17 равен 100">
+            <figure className="history-chart" aria-label="Индекс количества проданных устройств на запусках iPhone 14 — iPhone 17 и цель iPhone 18, где запуск iPhone 17 равен 100">
               <div className="target-line"><span>цель 116,6</span></div>
               <div className="history-bars">
                 {companyHistory.map((item) => (
@@ -251,8 +285,32 @@ export function CampaignDashboard() {
 
       <section id="tracking" aria-labelledby="tracking-title">
         <div className="section-heading">
-          <div><p className="section-kicker">Оценка результата</p><h2 id="tracking-title">Метрики кампании</h2></div>
-          <p className="section-summary">Факт будет обновляться по мере прохождения кампании.</p>
+          <div><p className="section-kicker">Ход кампании</p><h2 id="tracking-title">План-факт по дням</h2></div>
+          <p className="section-summary">Ежедневный контроль заявок, продаж, расходов и стоимости результата по каждой фазе.</p>
+        </div>
+
+        <div className="plan-fact-summary">
+          {planFactSummary.map(({ label, plan }) => (
+            <article className="plan-fact-card" key={label}>
+              <p>{label}</p>
+              <div className="plan-fact-values">
+                <span><small>План</small><strong>{plan}</strong></span>
+                <span><small>Факт</small><strong>—</strong></span>
+              </div>
+              <div className="plan-fact-status"><span>Выполнение</span><strong>Нет данных</strong></div>
+            </article>
+          ))}
+        </div>
+
+        <Tabs defaultValue="preorder" className="plan-fact-tabs">
+          <TabsList aria-label="Выбор фазы для план-факта"><TabsTrigger value="preorder">Предзаказ</TabsTrigger><TabsTrigger value="launch">Старт продаж</TabsTrigger></TabsList>
+          <TabsContent value="preorder"><DailyPerformanceTable metric="Заявки" resultCost="Стоимость заявки" /></TabsContent>
+          <TabsContent value="launch"><DailyPerformanceTable metric="Продажи iPhone 18" resultCost="Стоимость продажи" /></TabsContent>
+        </Tabs>
+
+        <div className="section-heading metric-reference-heading">
+          <div><p className="section-kicker">Методика</p><h3>Метрики и источники</h3></div>
+          <p className="section-summary">Планы остаются зафиксированными, фактические значения добавляются по мере прохождения кампании.</p>
         </div>
         <Card className="table-card">
           <CardContent>
@@ -266,13 +324,6 @@ export function CampaignDashboard() {
           <div><strong>Ежедневно</strong><span>заявки и продажи</span></div>
           <div><strong>Еженедельно</strong><span>динамика относительно плана</span></div>
           <div><strong>По итогам этапа</strong><span>результат и выводы</span></div>
-        </div>
-      </section>
-
-      <section id="owners" aria-labelledby="owners-title">
-        <div className="section-heading"><div><p className="section-kicker">Команда</p><h2 id="owners-title">Ответственные</h2></div></div>
-        <div className="owner-grid">
-          {team.map(([initials, name, role], index) => <div className={index === 0 ? 'owner-card lead' : 'owner-card'} key={name}><span>{initials}</span><div><strong>{name}</strong><p>{role}</p></div></div>)}
         </div>
       </section>
 

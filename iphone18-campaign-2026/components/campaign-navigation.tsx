@@ -18,7 +18,7 @@ const navItems = [
   { label: 'Аудитория', href: '#strategy', icon: Users },
   { label: 'CRM-план', href: '#crm', icon: MessageSquareText },
   { label: 'Форматы', href: '#formats', icon: Megaphone },
-  { label: 'Метрики', href: '#tracking', icon: Radio },
+  { label: 'План-факт', href: '#tracking', icon: Radio },
 ] as const;
 
 function useActiveSection() {
