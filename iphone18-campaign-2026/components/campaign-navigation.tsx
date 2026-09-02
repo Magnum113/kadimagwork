@@ -15,7 +15,7 @@ const navItems = [
   { label: 'Обзор', href: '#overview', icon: LayoutDashboard },
   { label: 'Цели', href: '#kpi', icon: Target },
   { label: 'Этапы', href: '#roadmap', icon: MapIcon },
-  { label: 'Стратегия', href: '#strategy', icon: Users },
+  { label: 'Аудитория', href: '#strategy', icon: Users },
   { label: 'CRM-план', href: '#crm', icon: MessageSquareText },
   { label: 'Форматы', href: '#formats', icon: Megaphone },
   { label: 'Метрики', href: '#tracking', icon: Radio },

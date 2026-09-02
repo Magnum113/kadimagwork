@@ -3,7 +3,6 @@
 import {
   Goal,
   MapPinned,
-  MessageCircle,
   MonitorSmartphone,
   Radio,
   Send,
@@ -32,17 +31,53 @@ const onlineStoreMetrics = [
 ];
 
 const crmEvents = [
-  { date: '03', channels: ['Push', 'Email'], title: 'Старт предзаказа', audience: 'Вся доступная база' },
-  { date: '10', channels: ['SMS'], title: 'Коммуникация после презентации', audience: 'Приоритетные сегменты' },
-  { date: '15', channels: ['Push', 'Email'], title: 'Последняя неделя предзаказа', audience: 'Вся доступная база' },
-  { date: '19', channels: ['Push'], title: 'Последний день предзаказа', audience: 'Вся доступная база' },
+  {
+    date: '03',
+    channels: ['Push', 'Email'],
+    title: 'Старт предзаказа',
+    purpose: 'Сообщить, что предзаказ открыт, и привести на промостраницу для оформления заявки.',
+    audience: 'Вся доступная база',
+  },
+  {
+    date: '10',
+    channels: ['SMS'],
+    title: 'После презентации',
+    purpose: 'Использовать подтверждённые детали презентации 9 сентября и повторно привести на предзаказ.',
+    audience: 'Четыре приоритетных SMS-сегмента',
+  },
+  {
+    date: '15',
+    channels: ['Push', 'Email'],
+    title: 'Последняя неделя предзаказа',
+    purpose: 'Напомнить, что предзаказ действует до ориентировочного старта продаж 20 сентября.',
+    audience: 'Вся доступная база',
+  },
+  {
+    date: '19',
+    channels: ['Push'],
+    title: 'Последний день предзаказа',
+    purpose: 'Сообщить о завершении предзаказа на следующий день и дать последнюю возможность оформить заявку.',
+    audience: 'Вся доступная база',
+  },
 ];
 
 const segments = [
-  'Покупатели iPhone прошлых стартов',
-  'Владельцы iPhone с покупкой за последние 2–4 года',
-  'Премиум-клиенты',
-  'Посетители лендинга iPhone 18 без заявки',
+  {
+    title: 'Покупатели iPhone прошлых стартов',
+    detail: 'Покупали iPhone в первые 30 дней после старта продаж в 2023, 2024 или 2025 году.',
+  },
+  {
+    title: 'Владельцы iPhone',
+    detail: 'Покупали любой iPhone за последние 2–4 года и не входят в первый сегмент.',
+  },
+  {
+    title: 'Премиум-клиенты',
+    detail: 'Покупали дорогую технику Apple или флагманские смартфоны, имеют высокий средний чек или покупают регулярно.',
+  },
+  {
+    title: 'Интересовались iPhone 18',
+    detail: 'Посетили промостраницу предзаказа, но не оформили заявку.',
+  },
 ];
 
 const preorderFormats = [
@@ -81,7 +116,7 @@ const team = [
   ['ЮБ', 'Юлия Бородина', 'CRM-маркетинг'],
   ['АУ', 'Амина Умарова', 'Тексты'],
   ['РЛ', 'Регина Лямина', 'Управление проектом'],
-  ['КК', 'Камиль Казимов', 'Коммуникационная стратегия'],
+  ['КК', 'Камиль Казимов', 'Креативная стратегия'],
   ['ОН', 'Омар Нахибашев', 'Арт-дирекшн'],
 ];
 
@@ -108,24 +143,12 @@ export function CampaignDashboard() {
     <>
       <section id="strategy" aria-labelledby="strategy-title">
         <div className="section-heading">
-          <div><p className="section-kicker">Подход</p><h2 id="strategy-title">Стратегия и аудитория</h2></div>
-          <p className="section-summary">Показать 05.ru как понятное и удобное место покупки нового iPhone.</p>
+          <div><p className="section-kicker">Основа кампании</p><h2 id="strategy-title">Цели и аудитория</h2></div>
         </div>
 
-        <div className="strategy-layout">
-          <Card className="positioning-card">
-            <CardHeader>
-              <CardDescription>Позиционирование</CardDescription>
-              <CardTitle>Новый iPhone удобно покупать в 05.ru</CardTitle>
-            </CardHeader>
-            <CardContent><p>Единое сообщение во всех каналах: новинка доступна, условия понятны, оформить покупку легко.</p></CardContent>
-          </Card>
-
-          <div className="objective-stack">
-            <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Рост продаж компании на 16,6%; интернет-магазин — продать 344 iPhone 18.</p></div></div>
-            <div className="objective-row"><span className="objective-icon"><Goal /></span><div><strong>Маркетинг</strong><p>40 заявок на предзаказ.</p></div></div>
-            <div className="objective-row"><span className="objective-icon"><MessageCircle /></span><div><strong>Коммуникация</strong><p>Поддержать выбор 05.ru на всём пути к покупке.</p></div></div>
-          </div>
+        <div className="objective-stack">
+          <div className="objective-row"><span className="objective-icon"><ShoppingBag /></span><div><strong>Бизнес</strong><p>Рост продаж компании на 16,6%; интернет-магазин — продать 344 iPhone 18.</p></div></div>
+          <div className="objective-row"><span className="objective-icon"><Goal /></span><div><strong>Маркетинг</strong><p>40 заявок на предзаказ.</p></div></div>
         </div>
 
         <div className="audience-panel">
@@ -183,14 +206,16 @@ export function CampaignDashboard() {
                 <time dateTime={`2026-09-${event.date}`}><strong>{event.date}</strong><span>сент</span></time>
                 <div className="event-body">
                   <div className="channel-badges">{event.channels.map((channel) => <Badge variant="outline" key={channel}>{channel}</Badge>)}</div>
-                  <h3>{event.title}</h3><p>{event.audience}</p>
+                  <h3>{event.title}</h3>
+                  <p className="event-purpose">{event.purpose}</p>
+                  <p className="event-audience"><strong>Аудитория</strong><span>{event.audience}</span></p>
                 </div>
               </article>
             ))}
           </div>
           <Card className="segment-card">
-            <CardHeader><CardTitle>Приоритеты SMS</CardTitle></CardHeader>
-            <CardContent><ol className="segment-list">{segments.map((segment, index) => <li key={segment}><span>{String(index + 1).padStart(2, '0')}</span><strong>{segment}</strong></li>)}</ol></CardContent>
+            <CardHeader><CardTitle>Аудитории SMS</CardTitle><CardDescription>10 сентября · порядок приоритета</CardDescription></CardHeader>
+            <CardContent><ol className="segment-list">{segments.map((segment, index) => <li key={segment.title}><span>{String(index + 1).padStart(2, '0')}</span><div><strong>{segment.title}</strong><p>{segment.detail}</p></div></li>)}</ol></CardContent>
           </Card>
         </div>
       </section>
@@ -221,17 +246,6 @@ export function CampaignDashboard() {
             <div className="channel-row"><span className="channel-icon"><Send /></span><div><strong>Telegram Ads</strong><p>Старт продаж</p></div></div>
             <div className="channel-row"><span className="channel-icon"><MapPinned /></span><div><strong>Яндекс Карты и 2ГИС</strong><p>Старт продаж и локальный трафик</p></div></div>
           </div>
-        </div>
-      </section>
-
-      <section id="messaging" aria-labelledby="messaging-title">
-        <div className="section-heading">
-          <div><p className="section-kicker">Коммуникация</p><h2 id="messaging-title">Сообщения по этапам</h2></div>
-        </div>
-        <div className="message-wave-grid">
-          <Card className="message-wave active"><CardHeader><Badge variant="secondary">Предзаказ</Badge><CardTitle>Оформить предзаказ</CardTitle><CardDescription>Получить iPhone 18 одним из первых.</CardDescription></CardHeader></Card>
-          <Card className="message-wave"><CardHeader><Badge variant="outline">Старт продаж</Badge><CardTitle>Новые iPhone в продаже</CardTitle><CardDescription>Коммуникация первых недель запуска.</CardDescription></CardHeader></Card>
-          <Card className="message-wave"><CardHeader><Badge variant="outline">Основная фаза</Badge><CardTitle>iPhone 18 есть в 05.ru</CardTitle><CardDescription>Коммуникация о наличии до 1 ноября.</CardDescription></CardHeader></Card>
         </div>
       </section>
 
